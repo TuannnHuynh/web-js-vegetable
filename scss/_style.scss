@@ -1,0 +1,54 @@
+.none {
+  display: none;
+}
+.block {
+  display: block;
+}
+.empty {
+  cursor: not-allowed;
+  opacity: 0.3;
+  transition: 0.4s all ease-in;
+}
+
+button {
+  cursor: pointer;
+}
+
+.product-price {
+  display: block;
+  color: $productPriceColor;
+  font-weight: 700;
+  font-size: 22px;
+  text-align: center;
+}
+
+.currency {
+  &::before {
+    content: "\20B9";
+    padding-right: 3px;
+  }
+}
+
+.btn-added {
+  transition: 0.4s all ease-in;
+  background-color: #fc7710;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  padding: 10px 0;
+  margin-bottom: 16px;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 2px;
+  &::before {
+    content: "✔";
+    font-size: 15px;
+    margin-right: 5px;
+  }
+}
+
+.scale-cart {
+  animation: animationCart 0.2s ease-in;
+}
