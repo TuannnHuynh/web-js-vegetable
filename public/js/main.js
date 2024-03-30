@@ -224,7 +224,7 @@ const items = document.querySelector("#items")
 const total = document.querySelector("#total")
 const search = document.querySelector("#value-search")
 let checkCart = false
-let temp = []
+let temp = products
 
 header.addEventListener("click",function(e){
   const cartIcon = e.target.closest(".cart-icon img")
@@ -337,8 +337,8 @@ product.addEventListener("click", function(e){
     if(btnAdd){
       const id = btnAdd.dataset.id
       const item = temp.find((val) => val.id === +id)
-      const idxCart = carts.findIndex((val)=> val.id === item.id)
-      const idxFilter = temp.findIndex((val) => val.id === item.id)
+      const idxCart = carts.findIndex((val)=> val.id === +item.id)
+      const idxFilter = temp.findIndex((val) => val.id === +item.id)
       if(idxCart === -1){
         carts.push({...item,quantity: Number(input[idxFilter].value),sub: Number(input[idxFilter].value) * item.price})
         input[idxFilter].value = 1 //rest
